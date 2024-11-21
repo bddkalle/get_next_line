@@ -6,15 +6,17 @@
 #    By: fschnorr <fschnorr@student.42berlin.de>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/20 16:08:21 by fschnorr          #+#    #+#              #
-#    Updated: 2024/11/20 16:30:04 by fschnorr         ###   ########.fr        #
+#    Updated: 2024/11/21 12:22:39 by fschnorr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = gnl.a
 
 INCLUDE = -I include
-SRC = $(addprefix src/, get_next_line.c \
-                        get_next_line_utils.c)
+SRC = $(addprefix src/, $(addsuffix .c,		\
+						get_next_line		\
+                        get_next_line_utils	\
+											))
 OBJS := $(SRC:.c=.o)
 
 CC = cc
