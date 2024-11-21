@@ -6,11 +6,11 @@
 /*   By: fschnorr <fschnorr@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 12:40:36 by fschnorr          #+#    #+#             */
-/*   Updated: 2024/11/21 14:58:15 by fschnorr         ###   ########.fr       */
+/*   Updated: 2024/11/21 16:36:19 by fschnorr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "../include/get_next_line.h"
 
 /* size_t	ft_strlen(const char *s)
 {
