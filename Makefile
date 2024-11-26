@@ -6,7 +6,7 @@
 #    By: fschnorr <fschnorr@student.42berlin.de>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/20 16:08:21 by fschnorr          #+#    #+#              #
-#    Updated: 2024/11/21 12:22:39 by fschnorr         ###   ########.fr        #
+#    Updated: 2024/11/26 14:10:50 by fschnorr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,8 +25,9 @@ CFLAGS := -Wall -Werror -Wextra
 all: $(NAME)
 
 $(NAME): $(OBJS)
+	@echo -n "run ar for gnl..."
 	@ar rcs $(NAME) $(OBJS)
-	@echo "ran ar for gnl"
+	@echo "done"
 
 %.o: %.c
 	@$(CC) -c $< -o $@ $(CFLAGS) $(INCLUDE)
@@ -35,7 +36,8 @@ clean:
 	@rm -f $(OBJS)
 
 fclean: clean
+	@echo -n "run fclean for gnl..."
 	@rm -f $(NAME)
-	@echo "ran fclean for gnl"
+	@echo "done"
 
 re: fclean all
