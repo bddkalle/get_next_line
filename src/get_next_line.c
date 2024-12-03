@@ -6,7 +6,7 @@
 /*   By: fschnorr <fschnorr@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 14:44:25 by fschnorr          #+#    #+#             */
-/*   Updated: 2024/09/25 23:49:55 by fschnorr         ###   ########.fr       */
+/*   Updated: 2024/12/04 00:48:18 by fschnorr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ static char	*_fill_stash(int fd, char *stash, char *buffer)
 char	*_set_line(char *line)
 {
 	char	*left_stash;
-	ssize_t	i;
+	size_t	i;
 
 	i = 0;
 	while (line[i] != '\n' && line[i] != '\0')
@@ -61,27 +61,26 @@ char	*_set_line(char *line)
 	return (left_stash);
 }
 
-char	*get_next_line(int fd)
+char	*get_next_line(int fd, t_gnl *gnl)
 {
 	char		*buffer;
-	static char	*stash;
 	char		*line;
 
 	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, 0, 0) < 0)
 	{
-		free(stash);
-		stash = NULL;
+		free(gnl->stash);
+		gnl->stash = NULL;
 		return (NULL);
 	}
 	buffer = (char *)malloc((BUFFER_SIZE + 1) * sizeof(char));
 	if (!buffer)
 		return (NULL);
-	line = _fill_stash(fd, stash, buffer);
+	line = _fill_stash(fd, gnl->stash, buffer);
 	free (buffer);
 	buffer = NULL;
 	if (!line)
 		return (NULL);
-	stash = _set_line(line);
+	gnl->stash = _set_line(line);
 	return (line);
 }
 

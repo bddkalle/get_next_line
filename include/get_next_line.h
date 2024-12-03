@@ -6,7 +6,7 @@
 /*   By: fschnorr <fschnorr@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 12:45:14 by fschnorr          #+#    #+#             */
-/*   Updated: 2024/11/21 15:01:44 by fschnorr         ###   ########.fr       */
+/*   Updated: 2024/12/04 00:30:21 by fschnorr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,12 @@
 # include <fcntl.h>
 # include "../../ft_printf/lib/libft/includes/libft.h"
 
+typedef struct s_gnl
+{
+	char	*stash;
+}			t_gnl;
 
-char	*get_next_line(int fd);
+char	*get_next_line(int fd, t_gnl *gnl);
 //size_t	ft_strlen(const char *s);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strchr(const char *s, int c);
