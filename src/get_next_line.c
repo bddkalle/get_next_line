@@ -6,16 +6,16 @@
 /*   By: fschnorr <fschnorr@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 14:44:25 by fschnorr          #+#    #+#             */
-/*   Updated: 2024/12/04 00:48:18 by fschnorr         ###   ########.fr       */
+/*   Updated: 2024/12/04 10:29:30 by fschnorr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "../include/get_next_line.h"
 
 static char	*_fill_stash(int fd, char *stash, char *buffer)
 {
 	char	*tmp;
-	ssize_t	b_read;
+	t_size	b_read;
 
 	b_read = 1;
 	while (b_read > 0)
@@ -44,7 +44,7 @@ static char	*_fill_stash(int fd, char *stash, char *buffer)
 char	*_set_line(char *line)
 {
 	char	*left_stash;
-	size_t	i;
+	t_size	i;
 
 	i = 0;
 	while (line[i] != '\n' && line[i] != '\0')
