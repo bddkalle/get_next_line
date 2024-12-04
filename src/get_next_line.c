@@ -6,7 +6,7 @@
 /*   By: fschnorr <fschnorr@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 14:44:25 by fschnorr          #+#    #+#             */
-/*   Updated: 2024/12/04 10:29:30 by fschnorr         ###   ########.fr       */
+/*   Updated: 2024/12/04 10:50:53 by fschnorr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static char	*_fill_stash(int fd, char *stash, char *buffer)
 {
 	char	*tmp;
-	t_size	b_read;
+	int		b_read;
 
 	b_read = 1;
 	while (b_read > 0)
