@@ -6,7 +6,7 @@
 /*   By: fschnorr <fschnorr@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 12:45:14 by fschnorr          #+#    #+#             */
-/*   Updated: 2024/12/05 09:59:44 by fschnorr         ###   ########.fr       */
+/*   Updated: 2024/12/05 15:10:04 by fschnorr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,5 @@ char	*ft_strchr(const char *s, int c);
 char	*ft_strdup(const char *s1);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*free_stash(char *stash);
-
 
 #endif
